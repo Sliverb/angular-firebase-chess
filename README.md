@@ -9,6 +9,7 @@ The enviroment files are currently missing as they contain my firebase creds. I 
 angular CLI creates 2 default files. environment.ts & environment.prod.ts
 This is the content of the files (one for dev and one for prod of course)
 
+```typescript
 // Local modules
 import { IFirebaseConfig } from '../common/Interfaces';
 
@@ -24,6 +25,7 @@ export const FirebaseConfig: IFirebaseConfig = {
     storageBucket: '<your-storage-bucket>',
     messagingSenderId: '<your-messaging-sender-id>'
 };
+```
 
 
 # NgChess
