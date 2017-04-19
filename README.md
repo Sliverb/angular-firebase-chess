@@ -6,7 +6,7 @@ This is an project to help me learn angular 4 and more.
 
 # NOTES
 The enviroment files are currently missing as they contain my firebase creds. I will change this soon. In the mean time, you can create your own enviromnent files.
-angular CLI creates 2 default files. environment.ts & environment.prod.ts
+angular CLI creates 2 default files. `environment.ts` & `environment.prod.ts`
 This is the content of the files (one for dev and one for prod of course)
 
 ```typescript
