@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f7f6f8;
+}
+
+.root {
+  margin-top:20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.view {
+  animation: fadeIn 0.2s ease-in;
+}
+
+.history span {
+  margin-right: 8px;
+}

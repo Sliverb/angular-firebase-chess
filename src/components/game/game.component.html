@@ -1,0 +1,17 @@
+<div class='view row'>
+    <div class='column column-50'>
+        <div id='game-board'></div>
+    </div>
+    <div class='column column-50'>
+        <div class="links">
+            <a routerLink="/">Go Home</a>
+            <div>Player 1: <a target="_blank" href="{{getDomainInfo()}}/game/{{p1_token}}">{{getDomainInfo()}}/game/{{p1_token}}</a></div>
+            <div>Player 2: <a target="_blank" href="{{getDomainInfo()}}/game/{{p2_token}}">{{getDomainInfo()}}/game/{{p2_token}}</a></div>
+        </div>
+        <blockquote>
+            <h5 class='turn'>{{ turnText }}</h5>
+            <h5 class='status'>{{ statusText }}</h5>
+        </blockquote>
+        <p class='history' [innerHTML]="history()"></p>
+    </div>
+</div>
