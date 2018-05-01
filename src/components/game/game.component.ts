@@ -3,8 +3,8 @@ import * as Chess from 'chess.js';
 import { Subscription } from 'rxjs/rx';
 import * as ChessBoard from 'chessboardjs';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
 
 // Local modules
 import { IGame } from '../../common/Interfaces';
