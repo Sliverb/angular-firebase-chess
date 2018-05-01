@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+// Node modules
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
+// Local modules
 import { Utils } from '../../common/Utils';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { IGame } from '../../common/Interfaces';
 
 @Component({
     selector: 'app-home',
@@ -13,29 +16,26 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private _router: Router,
-        private _angularFire: AngularFire) { }
+        private _afDb: AngularFireDatabase) { }
 
     ngOnInit() {
-
     }
 
-    createGame(): void {
-        const newGame = {
+    async createGame(): Promise<void> {
+        const newGame: IGame = {
             p1_token: Utils.GenToken(),
-            p2_token: Utils.GenToken()
+            p2_token: Utils.GenToken(),
+            moves: null,
+            fen: null
         };
 
-        this._router.navigate([`game/${newGame.p1_token}`]);
-
-        const game: FirebaseListObservable<any[]> = this._angularFire.database.list('/games');
-        game.push(newGame)
-            .then((result) => {
-                // console.log(result);
-                this._router.navigate([`game/${newGame.p1_token}`]);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        const game: AngularFireList<IGame> = this._afDb.list<IGame>('/games');
+        const result = await game.push(newGame);
+        console.log('HomeComponent.createGame: push game result', result);
+        if (!Utils.IsStringNullOrEmpty(result.key)) {
+            this._router.navigate([`game`, result.key, newGame.p1_token]);
+        } else {
+            // Error pushing game
+        }
     }
-
 }

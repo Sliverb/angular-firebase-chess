@@ -11,4 +11,12 @@ export class Utils {
 
         return text;
     }
+
+    public static IsStringNullOrEmpty(input: string): boolean {
+        try {
+            return (!input) || (!(input.trim()));
+        } catch (error) {
+            return true;
+        }
+    }
 }

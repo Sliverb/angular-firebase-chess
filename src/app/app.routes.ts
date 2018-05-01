@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from '../components/pagenotfound/pagenotfound.c
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'game/:token', component: GameComponent },
+    { path: 'game/:key/:token', component: GameComponent },
     { path: '**', component: PageNotFoundComponent }
 ];
 
