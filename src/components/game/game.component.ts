@@ -1,6 +1,6 @@
 // Node modules
 import * as Chess from 'chess.js';
-import { Subscription } from 'rxjs/rx';
+import { Subscription } from 'rxjs';
 import * as ChessBoard from 'chessboardjs';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
